@@ -1,6 +1,5 @@
 import { DeepPartial } from "typeorm/index";
 import { z } from "zod";
-import { Movie } from "../entities/movies.entity";
 import {
   movieSchema,
   returnListMoviesSchema,

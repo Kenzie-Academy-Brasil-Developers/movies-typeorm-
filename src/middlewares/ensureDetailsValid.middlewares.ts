@@ -3,7 +3,6 @@ import { ZodTypeAny } from "zod";
 
 const ensureDetailsValidMiddleware =
   (schema: ZodTypeAny) => (req: Request, Res: Response, next: NextFunction) => {
-
     const validatedData = schema.parse(req.body);
 
     req.body = validatedData;

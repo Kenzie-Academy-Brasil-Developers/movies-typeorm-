@@ -18,7 +18,8 @@ const listMoviesService = async (data: any): Promise<IAllMoviesReturn> => {
     perPageResult = 5;
   }
 
-  let sortResult: string = sort === "price" || sort === "duration" ? sort : "id";
+  let sortResult: string =
+    sort === "price" || sort === "duration" ? sort : "id";
 
   let orderResult: string = order === "asc" || order === "desc" ? order : "ASC";
 
