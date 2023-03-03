@@ -10,6 +10,6 @@ import {
 type IMovieRequest = z.infer<typeof movieSchema>;
 type IMovieReturn = z.infer<typeof returnMovieSchema>;
 type IAllMoviesReturn = z.infer<typeof returnListMoviesSchema>;
-type IMovieUpdate = DeepPartial<Movie>;
+type IMovieUpdate = DeepPartial<IMovieRequest>;
 
 export { IMovieRequest, IMovieReturn, IAllMoviesReturn, IMovieUpdate };
