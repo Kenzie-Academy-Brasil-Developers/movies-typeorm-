@@ -17,7 +17,7 @@ const ensureMovieNameExist = async (
   });
 
   if (findMovieName) {
-    throw new AppError("Name already registered", 404);
+    throw new AppError("Movie already exists.", 409);
   }
 
   return next();

@@ -1,15 +1,15 @@
-import { QueryResult } from "pg";
-import { DeepPartial } from "typeorm";
-import { TypeOf, z } from "zod";
+import { DeepPartial } from "typeorm/index";
+import { z } from "zod";
+import { Movie } from "../entities/movies.entity";
 import {
   movieSchema,
+  returnListMoviesSchema,
   returnMovieSchema,
-  returnAllMoviesSchema,
 } from "../schemas/movies.schemas";
 
 type IMovieRequest = z.infer<typeof movieSchema>;
 type IMovieReturn = z.infer<typeof returnMovieSchema>;
-type IAllMoviesReturn = z.infer<typeof returnAllMoviesSchema>;
-type IMovieUpdate = DeepPartial<IMovieRequest>;
+type IAllMoviesReturn = z.infer<typeof returnListMoviesSchema>;
+type IMovieUpdate = DeepPartial<Movie>;
 
 export { IMovieRequest, IMovieReturn, IAllMoviesReturn, IMovieUpdate };

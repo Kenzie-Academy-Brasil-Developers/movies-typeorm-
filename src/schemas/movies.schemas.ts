@@ -10,9 +10,21 @@ const movieSchema = z.object({
 const returnMovieSchema = movieSchema.extend({
   id: z.number(),
 });
+const returnList = returnMovieSchema.array();
 
-const returnAllMoviesSchema = returnMovieSchema.array()
+const returnListMoviesSchema = z.object({
+  nextPage: optional(z.string().max(500)).nullable(),
+  prevPage: optional(z.string().max(500)).nullable(),
+  count: z.number().int(),
+  data: returnList,
+});
 
-const userUpdateSchema = movieSchema.partial()
+const movieUpdateSchema = movieSchema.partial();
 
-export { movieSchema, returnMovieSchema, returnAllMoviesSchema, userUpdateSchema };
+export {
+  movieSchema,
+  returnMovieSchema,
+  returnList,
+  returnListMoviesSchema,
+  movieUpdateSchema,
+};
